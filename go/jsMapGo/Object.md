@@ -1,3 +1,4 @@
+## Object.keys
 ```go
 package main
 
@@ -31,3 +32,6 @@ func main() {
 }
 
 ```
+
+## Object.values
+---todo
