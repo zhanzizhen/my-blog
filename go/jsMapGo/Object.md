@@ -1,3 +1,4 @@
+```go
 package main
 
 import (
@@ -28,3 +29,5 @@ func main() {
 	}
 	fmt.Print(ObjectKeys(test))
 }
+
+```
