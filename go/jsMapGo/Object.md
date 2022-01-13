@@ -34,4 +34,37 @@ func main() {
 ```
 
 ## Object.values
----todo
+```go
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func ObjectValues(obj interface{}) []interface{} {
+	v := reflect.ValueOf(obj)
+	t := reflect.TypeOf(obj)
+	if t.Kind() != reflect.Map {
+		return nil
+	}
+
+	values := make([]interface{}, v.Len())
+	keys := v.MapKeys()
+
+	for i := 0; i < len(keys); i++ {
+		values[i] = v.MapIndex(keys[i])
+	}
+
+	return values
+}
+
+func main() {
+	test := map[string]string{
+		"a": "1",
+		"b": "2",
+	}
+	fmt.Print(ObjectValues(test))
+}
+
+```
