@@ -1,0 +1,11 @@
+$(command)表示某个command
+如：
+
+```cmd
+echo "Today is $(date). A fine day.
+Today is Sat Mar 26 14:35:31 CST 2022. A fine day.
+```
+
+而${}，则更像是js的string template.
+${var}hello ，用js表示则是 `${var}hello`，表示变量var，后面带着字符串hello
+$varhello，表示变量varhello
