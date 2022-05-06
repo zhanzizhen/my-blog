@@ -21,3 +21,6 @@ A _resolution_ contains on the left-hand side a glob pattern applied to the depe
 - `**` denotes all the nested dependencies of the project (a bad idea mostly, as well as all other designations ending with `**`).
 
 Note on single star: `*` is not authorized in a package resolution because it would introduce too much non-determinism. For example, there is the risk of a referring to `package-*` at one point to match `package-a` and `package-b`, and later on, this would match a new nested dependency `package-c` that wasn't intended to be matched.
+
+
+npm与之相对应的，则是overrides属性
