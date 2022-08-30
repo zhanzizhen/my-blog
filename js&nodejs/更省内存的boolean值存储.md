@@ -1,5 +1,6 @@
 
-## 普通数组来存储
+## 比较
+### 普通数组来存储
 ```js
 const bitArray = [];
 
@@ -11,7 +12,7 @@ window.bitArray = bitArray;
 ```
 内存占用是20288 byte
 
-## 用bit来存储
+### 用bit来存储
 
 ```js
 class BitArray {
@@ -60,4 +61,10 @@ for (let i = 1; i < 4000; i += 5) {
 }
 ```
       
-内存占用是2212 byte，内存节省接近10倍
+内存占用是2212 byte，内存节省接近10倍。
+get和set的复杂度都是O(1)
+
+
+## note
+内存占用的测量是通过chrome heap snapshot得出：
+![image](https://user-images.githubusercontent.com/22932241/187389425-eea3d934-b367-4093-81ba-27fb8943c061.png)
