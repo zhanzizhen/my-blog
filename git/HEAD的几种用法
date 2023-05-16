@@ -1,0 +1,6 @@
+HEAD~2 : 2 commits older than HEAD   最常用的用法
+HEAD^2 : the second parent of HEAD, if HEAD was a merge, otherwise illegal
+HEAD@{2} : refers to the 3rd listing in the overview of git reflog
+  这个适合用在undo一些commit，比如undo git commit --amend可以：git reset --soft HEAD@{1}
+HEAD~~ : 2 commits older than HEAD
+HEAD^^ : 2 commits older than HEAD
