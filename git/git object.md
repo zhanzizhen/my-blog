@@ -1,13 +1,17 @@
 # git object
-git的信息系统是个key-value的库。key是hash，value是git object。value有四种类型
+git的信息系统是个key-value的库。key是hash，value是git object。这些信息存储在.git/objects文件夹下面
+![image](https://github.com/zhanzizhen/my-blog/assets/22932241/775fe8a3-4b09-45ec-93f2-848a462f1d31)
+
+
+而git object有四种类型
 
 ### commit object
 
-```cmd
-$ git cat-file -t head
+```bash
+$ git cat-file -t head #查看当前head指向的object类型
 commit
 
-$ git cat-file -p head
+$ git cat-file -p head #查看当前head指向的object内容
 tree a9c75b1acba3da109d864fc7490f1946fe1a0a22
 parent 073e0e6a1f0812f5ce7096a5307053d778889dfb
 author zhanzizhen <zhanzizhen@corp.netease.com> 1621499404 +0800
@@ -48,12 +52,12 @@ tree object包含了两个内容：
 2. 子文件（夹）hash
 
 可以发现：
-tree object其实只是记录第一层子文件的object hash，并没有递归地去记录子文件夹下面的object
+tree object其实只是记录第一层子文件的object hash，并没有递归地去记录子文件夹下面的object，这个设计是git高效的原因之一。
 
 ### blob object
-blob object用于存储二进制文件快照。打印下上面的tsconfig.json，如下
+blob object用于存储二进制文件快照。打印下上面的tsconfig.json对应的blob，如下
 ```cmd
-$ git cat-file -t a8a49b1
+$ git cat-file -t a8a49b18170dfc947c789c72e28e17c66e65e794
 blob
 
 $ git cat-file -p a8a49b1
