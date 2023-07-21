@@ -53,6 +53,7 @@ tree object包含了两个内容：
 
 可以发现：
 tree object其实只是记录第一层子文件的object hash，并没有递归地去记录子文件夹下面的object，这个设计是git高效的原因之一。
+假如我们修改了src下面的某个文件然后commit到git仓库，通过git cat-file -p对比最近两个commit的tree object属性可以发现，只有src的hash发生了变化。
 
 ### blob object
 blob object用于存储二进制文件快照。打印下上面的tsconfig.json对应的blob，如下
